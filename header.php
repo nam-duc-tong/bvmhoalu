@@ -1,3 +1,7 @@
+<?php
+include "./admin/login.php";
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 

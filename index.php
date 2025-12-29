@@ -29,7 +29,7 @@ include "./admin/login.php";
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
-            <div class="navbar-nav mx-auto bg-light py-3 py-lg-0 px-3">
+            <div class="navbar-nav mx-auto py-3 py-lg-0 px-3" style="background-color: #f2f5fb !important;">
                 <a href="index.php" class="nav-item nav-link active">Trang Chủ</a>
                 <a href="about.php" class="nav-item nav-link">Giới Thiệu</a>
                 <a href="service.php" class="nav-item nav-link">Dịch Vụ</a>
@@ -409,25 +409,21 @@ include "./admin/login.php";
                                     </select>
                                 </div>
                                 <div class="col-12 col-sm-6">
-                                    <input type="text" class="form-control bg-white border-0" placeholder="Họ và Tên"
-                                        style="height: 55px;">
+                                    <input type="text" class="form-control bg-white border-0" placeholder="Họ và Tên" style="height: 55px;">
                                 </div>
                                 <div class="col-12 col-sm-6">
-                                    <input type="email" class="form-control bg-white border-0" placeholder="Email"
-                                        style="height: 55px;">
+                                    <input type="email" class="form-control bg-white border-0" placeholder="Email" style="height: 55px;">
                                 </div>
                                 <div class="col-12 col-sm-6">
                                     <div class="date" id="date1" data-target-input="nearest">
-                                        <input type="text" class="form-control bg-white border-0 datetimepicker-input"
-                                            placeholder="Từ Ngày" data-target="#date1"
-                                            data-toggle="datetimepicker" style="height: 55px;">
+                                        <input type="text" class="form-control bg-white border-0 datetimepicker-input" placeholder="Từ Ngày"
+                                            data-target="#date1" data-toggle="datetimepicker" style="height: 55px;">
                                     </div>
                                 </div>
                                 <div class="col-12 col-sm-6">
                                     <div class="time" id="time1" data-target-input="nearest">
                                         <input type="text" class="form-control bg-white border-0 datetimepicker-input"
-                                            placeholder="Đến Ngày" data-target="#time1"
-                                            data-toggle="datetimepicker" style="height: 55px;">
+                                            placeholder="Đến Ngày" data-target="#time1" data-toggle="datetimepicker" style="height: 55px;">
                                     </div>
                                 </div>
                                 <div class="col-12">
@@ -451,38 +447,38 @@ include "./admin/login.php";
             </div>
             <div class="row g-4">
                 <?php
-                    $sql = "select * from nhanvien";
-                    $result = mysqli_query($conn, $sql);
-                    while ($row = mysqli_fetch_assoc($result)) {
-                ?>  
-                 
-                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="team-item bg-light">
-                    <div class="overflow-hidden">
-                            <img class="img-fluid" src="img/bskien.png" alt="">
-                        </div>
-                        <div class="team-text text-center px-4">
-                            <h4>BS. <?php echo $row['tennhanvien'];?></h4>
-                            <span><?php echo $row['chucvu'];?></span>
-                        </div>
-                        <div class="team-text-overflow text-center bg-light p-4">
-                            <h4>BS. <?php echo $row['tennhanvien'];?></h4>
-                            <p><?php echo $row['chucvu'];?></p>
-                            <div class="d-flex justify-content-center">
-                                <a class="btn btn-square btn-outline-primary border-2 m-1" href="#!"><i
-                                        class="fab fa-x-twitter"></i></a>
-                                <a class="btn btn-square btn-outline-primary border-2 m-1" href="#!"><i
-                                        class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-square btn-outline-primary border-2 m-1" href="#!"><i
-                                        class="fab fa-youtube"></i></a>
-                                <a class="btn btn-square btn-outline-primary border-2 m-1" href="#!"><i
-                                        class="fab fa-linkedin-in"></i></a>
+                $sql = "select * from nhanvien";
+                $result = mysqli_query($conn, $sql);
+                while ($row = mysqli_fetch_assoc($result)) {
+                ?>
+
+                    <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                        <div class="team-item bg-light">
+                            <div class="overflow-hidden">
+                                <img class="img-fluid" src="img/bskien.png" alt="">
+                            </div>
+                            <div class="team-text text-center px-4">
+                                <h4>BS. <?php echo $row['tennhanvien']; ?></h4>
+                                <span><?php echo $row['chucvu']; ?></span>
+                            </div>
+                            <div class="team-text-overflow text-center bg-light p-4">
+                                <h4>BS. <?php echo $row['tennhanvien']; ?></h4>
+                                <p><?php echo $row['chucvu']; ?></p>
+                                <div class="d-flex justify-content-center">
+                                    <a class="btn btn-square btn-outline-primary border-2 m-1" href="#!"><i
+                                            class="fab fa-x-twitter"></i></a>
+                                    <a class="btn btn-square btn-outline-primary border-2 m-1" href="#!"><i
+                                            class="fab fa-facebook-f"></i></a>
+                                    <a class="btn btn-square btn-outline-primary border-2 m-1" href="#!"><i
+                                            class="fab fa-youtube"></i></a>
+                                    <a class="btn btn-square btn-outline-primary border-2 m-1" href="#!"><i
+                                            class="fab fa-linkedin-in"></i></a>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
                 <?php
-                    }
+                }
                 ?>
             </div>
         </div>
@@ -508,7 +504,8 @@ include "./admin/login.php";
                     <div class="owl-carousel testimonial-carousel">
                         <div class="testimonial-item text-center">
                             <img class="img-fluid rounded mx-auto mb-4" src="img/testimonial-1.jpg" alt="">
-                            <p class="fs-5">“Sau điều trị, thị lực của tôi cải thiện rõ rệt. Cảm ơn đội ngũ bác sĩ rất tận tâm.”
+                            <p class="fs-5">“Sau điều trị, thị lực của tôi cải thiện rõ rệt. Cảm ơn đội ngũ bác sĩ
+                                rất tận tâm.”
                             </p>
                             <h4>Nguyễn Văn A</h4>
                             <span>Bệnh Nhân</span>
@@ -522,7 +519,8 @@ include "./admin/login.php";
                         </div>
                         <div class="testimonial-item text-center">
                             <img class="img-fluid rounded mx-auto mb-4" src="img/testimonial-3.jpg" alt="">
-                            <p class="fs-5">“Từ ngày mổ mắt xong, cuộc sống của tôi thay đổi tích cực hơn rất nhiều.”
+                            <p class="fs-5">“Từ ngày mổ mắt xong, cuộc sống của tôi thay đổi tích cực hơn rất
+                                nhiều.”
                             </p>
                             <h4>Tống Thị C</h4>
                             <span>Bệnh Nhân</span>

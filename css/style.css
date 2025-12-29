@@ -311,14 +311,21 @@
 }
 
 .container.appointment .appointment-text {
-    background: linear-gradient(rgba(205, 95, 55, .95), rgba(205, 95, 55, .95)), url(../img/service-4.jpg) center center no-repeat;
+    background: linear-gradient(
+        rgba(13, 56, 157, 0.78),
+        rgba(13, 56, 157, 0.78)
+    ), url(../img/service-4.jpg) center center no-repeat;
     background-size: cover;
 }
 
 .container.appointment .appointment-form {
-    background: linear-gradient(rgba(72, 30, 11, .95), rgba(72, 30, 11, .95)), url(../img/service-1.jpg) center center no-repeat;
+    background: linear-gradient(
+        rgba(13, 56, 157, 0.78),
+        rgba(13, 56, 157, 0.78)
+    ), url(../img/service-1.jpg) center center no-repeat;
     background-size: cover;
 }
+
 
 .container.appointment .appointment-text .h-100,
 .container.appointment .appointment-form .h-100 {
