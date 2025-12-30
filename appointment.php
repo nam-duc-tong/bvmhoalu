@@ -13,50 +13,49 @@
     <!-- Topbar End -->
 
 
-    <!-- Navbar Start -->
+     <!-- Navbar Start -->
     <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top py-4 px-4 px-lg-5">
         <a href="index.php" class="navbar-brand d-block d-lg-none">
-            <h1 class="m-0 text-uppercase text-primary"><i class="fa fa-hospital fs-1 me-3"></i>Plasery</h1>
+            <h1 class="m-0 text-uppercase text-primary"><i class="fa fa-hospital fs-1 me-3"></i>BV Mắt Hoa Lư</h1>
         </a>
-        <div class="d-none d-lg-flex w-25">
+        <!-- <div class="d-none d-lg-flex w-25">
             <a href="https://themewagon.com/themes/plasery" class="btn btn-light px-3">Download Now</a>
-        </div>
+        </div> -->
         <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
-            <div class="navbar-nav mx-auto bg-light py-3 py-lg-0 px-3">
-                <a href="index.php" class="nav-item nav-link">Home</a>
-                <a href="about.php" class="nav-item nav-link">About Us</a>
-                <a href="service.php" class="nav-item nav-link">Our Services</a>
+            <div class="navbar-nav mx-auto py-3 py-lg-0 px-3" style="background-color: #f2f5fb !important;">
+                <a href="index.php" class="nav-item nav-link">Trang Chủ</a>
+                <a href="about.php" class="nav-item nav-link">Giới Thiệu</a>
+                <a href="service.php" class="nav-item nav-link">Dịch Vụ</a>
                 <div class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown">Pages</a>
+                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Thông Tin</a>
                     <div class="dropdown-menu bg-light border-0 m-0">
-                        <a href="appointment.php" class="dropdown-item active">Appointment</a>
-                        <a href="team.php" class="dropdown-item">Team Members</a>
-                        <a href="testimonial.php" class="dropdown-item">Testimonial</a>
-                        <a href="404.php" class="dropdown-item">404 Page</a>
+                        <a href="appointment.php" class="dropdown-item active">Đặt Lịch Hẹn</a>
+                        <a href="team.php" class="dropdown-item">Bác Sĩ</a>
+                        <a href="testimonial.php" class="dropdown-item">Bảng Giá</a>
+                        <a href="404.php" class="dropdown-item">Quản lý chất lượng</a>
                     </div>
                 </div>
-                <a href="contact.php" class="nav-item nav-link">Contact Us</a>
+                <a href="service.php" class="nav-item nav-link">Tin Tức</a>
+                <a href="contact.php" class="nav-item nav-link">Liên Hệ</a>
             </div>
         </div>
-        <div class="d-none d-lg-block w-25 text-end">
+        <!-- <div class="d-none d-lg-block w-25 text-end">
             <a href="#" class="btn btn-light px-3">Make Appointment</a>
-        </div>
+        </div> -->
     </nav>
     <!-- Navbar End -->
-
 
     <!-- Page Header Start -->
     <div class="container-fluid page-header py-5 mb-5 wow fadeIn" data-wow-delay="0.1s">
         <div class="container py-5">
-            <h1 class="display-3 mb-3">Appointment</h1>
+            <h1 class="display-3 mb-3">Đặt Lịch Hẹn</h1>
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb d-inline-flex justify-content-start bg-white px-4 py-2 mb-0">
-                    <li class="breadcrumb-item"><a href="#">Home</a></li>
-                    <li class="breadcrumb-item"><a href="#">Pages</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">Appointment</li>
+                    <li class="breadcrumb-item"><a href="#">Trang Chủ</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Đặt Lịch Hẹn</li>
                 </ol>
             </nav>
         </div>
@@ -68,54 +67,62 @@
     <div class="container-fluid py-5">
         <div class="container">
             <div class="text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;">
-                <h1 class="display-5 mb-4">Make An Appointment</h1>
+                <h1 class="display-5 mb-4">Đặt Lịch Hẹn</h1>
             </div>
             <div class="row g-5 justify-content-center">
                 <div class="col-lg-7 wow fadeIn" data-wow-delay="0.2s">
                     <div class="text-center">
-                        <h3>Call Now and Get a <span class="text-primary">20%</span> Discount</h3>
-                        <h2 class="mb-5">+0123456789</h2>
+                        <h3>Gọi ngay để được giảm giá <span class="text-primary">20%</span></h3>
+                        <h2 class="mb-5">0878.135.135</h2>
                     </div>
                     <form>
                         <div class="row g-3">
                             <div class="col-12 col-sm-6">
                                 <select class="form-select" style="height: 55px;">
-                                    <option selected>Select A Service</option>
-                                    <option value="1">Service 1</option>
-                                    <option value="2">Service 2</option>
-                                    <option value="3">Service 3</option>
+                                    <option selected>Chọn 1 Dịch Vụ</option>
+                                    <?php
+                                        $sql = "select * from dichvu";
+                                        $result = mysqli_query($conn,$sql);
+                                        while ($row = mysqli_fetch_assoc($result)){
+                                            echo "<option value=".$row['id_dv'].">".$row['tendichvu']."</option>";
+                                        }
+                                    ?>
                                 </select>
                             </div>
                             <div class="col-12 col-sm-6">
                                 <select class="form-select" style="height: 55px;">
-                                    <option selected>Select Doctor</option>
-                                    <option value="1">Doctor 1</option>
-                                    <option value="2">Doctor 2</option>
-                                    <option value="3">Doctor 3</option>
+                                    <option selected>Chọn Bác Sĩ</option>
+                                    <?php
+                                        $sql = "select * from nhanvien";
+                                        $result  = mysqli_query($conn,$sql);
+                                        while($row = mysqli_fetch_assoc($result)){
+                                            echo "<option value=".$row['id_nv'].">".$row['tennhanvien']."</option>";
+                                        }
+                                    ?>
                                 </select>
                             </div>
                             <div class="col-12 col-sm-6">
-                                <input type="text" class="form-control" placeholder="Your Name" style="height: 55px;">
+                                <input type="text" class="form-control" placeholder="Họ Và Tên" style="height: 55px;">
                             </div>
                             <div class="col-12 col-sm-6">
-                                <input type="email" class="form-control" placeholder="Your Email" style="height: 55px;">
+                                <input type="email" class="form-control" placeholder="Email" style="height: 55px;">
                             </div>
                             <div class="col-12 col-sm-6">
                                 <div class="date" id="date1" data-target-input="nearest">
                                     <input type="text" class="form-control datetimepicker-input"
-                                        placeholder="Appointment Date" data-target="#date1" data-toggle="datetimepicker"
+                                        placeholder="Ngày Hẹn" data-target="#date1" data-toggle="datetimepicker"
                                         style="height: 55px;">
                                 </div>
                             </div>
                             <div class="col-12 col-sm-6">
                                 <div class="time" id="time1" data-target-input="nearest">
                                     <input type="text" class="form-control datetimepicker-input"
-                                        placeholder="Appointment Time" data-target="#time1" data-toggle="datetimepicker"
+                                        placeholder="Vào lúc" data-target="#time1" data-toggle="datetimepicker"
                                         style="height: 55px;">
                                 </div>
                             </div>
                             <div class="col-12 text-center">
-                                <button class="btn btn-primary py-3 px-5" type="submit">Make Appointment</button>
+                                <button class="btn btn-primary py-3 px-5" type="submit">Đặt Lịch Hẹn</button>
                             </div>
                         </div>
                     </form>

@@ -1,4 +1,110 @@
-<?php require "./header.php"?>
+<?php require "./header.php" ?>
+<style>
+    * {
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+    }
+
+    body {
+        background: #f7f7f7;
+        margin: 0;
+    }
+
+    .container {
+        max-width: 1200px;
+        margin: auto;
+        display: flex;
+        gap: 20px;
+        padding: 20px;
+    }
+
+    /* CỘT TRÁI */
+    .main-content {
+        flex: 3;
+    }
+
+    .post {
+        display: flex;
+        gap: 15px;
+        background: #fff;
+        padding: 15px;
+        border-radius: 8px;
+        margin-bottom: 20px;
+    }
+
+    .post img {
+        width: 260px;
+        height: 160px;
+        object-fit: cover;
+        border-radius: 6px;
+    }
+
+    .post-info h3 {
+        color: #1e40af;
+        margin: 0 0 8px;
+        font-size: 18px;
+    }
+
+    .post-info p {
+        color: #555;
+        font-size: 14px;
+    }
+
+    .meta {
+        display: flex;
+        justify-content: space-between;
+        font-size: 13px;
+        margin-top: 10px;
+    }
+
+    .author {
+        color: orange;
+    }
+
+    /* CỘT PHẢI */
+    .sidebar {
+        flex: 1;
+    }
+
+    .sidebar h2 {
+        margin-bottom: 15px;
+    }
+
+    .service {
+        background: #fff;
+        border-radius: 8px;
+        margin-bottom: 15px;
+        overflow: hidden;
+    }
+
+    .service img {
+        width: 100%;
+        height: 160px;
+        object-fit: cover;
+    }
+
+    .service p {
+        padding: 10px;
+        font-weight: bold;
+        color: #1e40af;
+    }
+
+    @media (max-width: 768px) {
+        .container {
+            flex-direction: column;
+        }
+
+        .post {
+            flex-direction: column;
+        }
+
+        .post img {
+            width: 100%;
+            height: auto;
+        }
+    }
+</style>
+
 <body>
     <!-- Spinner Start -->
     <div id="spinner"
@@ -8,14 +114,14 @@
     <!-- Spinner End -->
 
 
-       <!-- Topbar Start -->
-  <?php include "./container_header.php"?>
+    <!-- Topbar Start -->
+    <?php include "./container_header.php" ?>
     <!-- Topbar End -->
 
 
     <!-- Navbar Start -->
     <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top py-4 px-4 px-lg-5">
-       <a href="index.php" class="navbar-brand d-block d-lg-none">
+        <a href="index.php" class="navbar-brand d-block d-lg-none">
             <h1 class="m-0 text-uppercase text-primary"><i class="fa fa-hospital fs-1 me-3"></i>BV Mắt Hoa Lư</h1>
         </a>
         <div class="d-none d-lg-flex w-25">
@@ -26,7 +132,7 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav mx-auto bg-light py-3 py-lg-0 px-3">
-                 <a href="index.php" class="nav-item nav-link">Trang Chủ</a>
+                <a href="index.php" class="nav-item nav-link ">Trang Chủ</a>
                 <a href="about.php" class="nav-item nav-link">Giới Thiệu</a>
                 <a href="service.php" class="nav-item nav-link">Dịch Vụ</a>
                 <div class="nav-item dropdown">
@@ -34,16 +140,16 @@
                     <div class="dropdown-menu bg-light border-0 m-0">
                         <a href="appointment.php" class="dropdown-item">Đặt Lịch Hẹn</a>
                         <a href="team.php" class="dropdown-item">Bác Sĩ</a>
-                        <a href="testimonial.php" class="dropdown-item">Bảng Giá</a>
+                        <a href="price.php" class="dropdown-item active">Bảng Giá</a>
                         <a href="404.php" class="dropdown-item">Quản lý chất lượng</a>
                     </div>
                 </div>
                 <a href="service.php" class="nav-item nav-link">Tin Tức</a>
-                <a href="contact.php" class="nav-item nav-link active">Liên Hệ</a>
+                <a href="contact.php" class="nav-item nav-link">Liên Hệ</a>
             </div>
         </div>
         <div class="d-none d-lg-block w-25 text-end">
-            <a href="#" class="btn btn-light px-3">Make Appointment</a>
+            <a href="#" class="btn btn-light px-3">Đặt Lịch Hẹn</a>
         </div>
     </nav>
     <!-- Navbar End -->
@@ -52,71 +158,69 @@
     <!-- Page Header Start -->
     <div class="container-fluid page-header py-5 mb-5 wow fadeIn" data-wow-delay="0.1s">
         <div class="container py-5">
-            <h1 class="display-3 mb-3">Phản hồi từ khách hàng</h1>
+            <h1 class="display-3 mb-3">Bảng Giá Dịch Vụ</h1>
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb d-inline-flex justify-content-start bg-white px-4 py-2 mb-0">
                     <li class="breadcrumb-item"><a href="#">Trang chủ</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">Phản hồi từ khách hàng</li>
+                    <li class="breadcrumb-item active" aria-current="page">Bảng Giá Dịch Vụ</li>
                 </ol>
             </nav>
-        </div>
+        </div> 
     </div>
     <!-- Page Header End -->
 
+    <div class="container">
+        <!-- CỘT TRÁI -->
+        <div class="main-content">
 
-    <!-- Testimonial Start -->
-    <div class="container-xxl py-5">
-        <div class="container">
-            <div class="text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;">
-                <h1 class="display-5 mb-5">What Our Clients Say!</h1>
-            </div>
-            <div class="row g-5">
-                <div class="col-lg-3 d-none d-lg-block wow fadeIn" data-wow-delay="0.5s">
-                    <div class="testimonial-left h-100">
-                        <img class="img-fluid" src="img/testimonial-1.jpg" alt="">
-                        <img class="img-fluid" src="img/testimonial-2.jpg" alt="">
-                        <img class="img-fluid" src="img/testimonial-3.jpg" alt="">
-                    </div>
-                </div>
-                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="owl-carousel testimonial-carousel">
-                        <div class="testimonial-item text-center">
-                            <img class="img-fluid rounded mx-auto mb-4" src="img/testimonial-1.jpg" alt="">
-                            <p class="fs-5">Dolores sed duo clita tempor justo dolor et stet lorem kasd labore dolore
-                                lorem ipsum. At lorem lorem magna ut et, nonumy et labore et tempor diam tempor erat.
-                            </p>
-                            <h4>Lily Taylor</h4>
-                            <span>Creative Director</span>
-                        </div>
-                        <div class="testimonial-item text-center">
-                            <img class="img-fluid rounded mx-auto mb-4" src="img/testimonial-2.jpg" alt="">
-                            <p class="fs-5">Dolores sed duo clita tempor justo dolor et stet lorem kasd labore dolore
-                                lorem ipsum. At lorem lorem magna ut et, nonumy et labore et tempor diam tempor erat.
-                            </p>
-                            <h4>Olivia Smith</h4>
-                            <span>Creative Director</span>
-                        </div>
-                        <div class="testimonial-item text-center">
-                            <img class="img-fluid rounded mx-auto mb-4" src="img/testimonial-3.jpg" alt="">
-                            <p class="fs-5">Dolores sed duo clita tempor justo dolor et stet lorem kasd labore dolore
-                                lorem ipsum. At lorem lorem magna ut et, nonumy et labore et tempor diam tempor erat.
-                            </p>
-                            <h4>Ava Brown</h4>
-                            <span>Creative Director</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 d-none d-lg-block wow fadeIn" data-wow-delay="0.5s">
-                    <div class="testimonial-right h-100">
-                        <img class="img-fluid" src="img/testimonial-1.jpg" alt="">
-                        <img class="img-fluid" src="img/testimonial-2.jpg" alt="">
-                        <img class="img-fluid" src="img/testimonial-3.jpg" alt="">
+            <div class="post">
+                <img src="https://via.placeholder.com/260x160" alt="">
+                <div class="post-info">
+                    <h3>Chăm sóc đôi mắt học đường – Ươm mầm tương lai</h3>
+                    <p>Trong bối cảnh tỷ lệ tật khúc xạ học đường ngày càng gia tăng...</p>
+                    <div class="meta">
+                        <span class="author">benhvienmathoalu</span>
+                        <span class="date"> Ngày 24/12/2025</span>
                     </div>
                 </div>
             </div>
+
+            <div class="post">
+                <img src="https://via.placeholder.com/260x160" alt="">
+                <div class="post-info">
+                    <h3>HOẠT ĐỘNG TRI ÂN Ý NGHĨA CỦA BỆNH VIỆN MẮT HOA LƯ</h3>
+                    <p>Chia sẻ kiến thức, tư vấn và thăm khám mắt cho thương bệnh binh...</p>
+                    <div class="meta">
+                        <span class="author">benhvienmathoalu</span>
+                        <span class="date"> Ngày 23/12/2025</span>
+                    </div>
+                </div>
+            </div>
+
         </div>
+
+        <!-- CỘT PHẢI -->
+        <aside class="sidebar">
+            <h2>Dịch vụ</h2>
+
+            <div class="service">
+                <img src="https://via.placeholder.com/300x180" alt="">
+                <p>Phẫu thuật Phaco</p>
+            </div>
+
+            <div class="service">
+                <img src="https://via.placeholder.com/300x180" alt="">
+                <p>Quản lý chất lượng</p>
+            </div>
+
+            <div class="service">
+                <img src="https://via.placeholder.com/300x180" alt="">
+                <p>Phẫu thuật thẩm mỹ mắt</p>
+            </div>
+        </aside>
     </div>
-    <!-- Testimonial End -->
+
+
 
 
     <!-- Instagram Start -->
@@ -151,7 +255,7 @@
 
 
     <!-- Footer Start -->
-       <?php include "./footer.php"?> 
+    <?php include "./footer.php" ?>
     <!-- Footer End -->
 
 

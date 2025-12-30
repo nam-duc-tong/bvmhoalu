@@ -10,17 +10,13 @@ include "./admin/login.php";
         <div class="spinner-grow text-primary" role="status"></div>
     </div>
     <!-- Spinner End -->
-
-
     <!-- Topbar Start -->
     <?php include "./container_header.php" ?>
     <!-- Topbar End -->
-
-
     <!-- Navbar Start -->
     <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top py-4 px-4 px-lg-5">
-        <a href="index.php" class="navbar-brand d-block d-lg-none">
-            <h1 class="m-0 text-uppercase text-primary"><i class="fa fa-hospital fs-1 me-3"></i>Plasery</h1>
+       <a href="index.php" class="navbar-brand d-block d-lg-none">
+            <h1 class="m-0 text-uppercase text-primary"><i class="fa fa-hospital fs-1 me-3"></i>BV Mắt Hoa Lư</h1>
         </a>
         <!-- <div class="d-none d-lg-flex w-25">
             <a href="https://themewagon.com/themes/plasery" class="btn btn-light px-3">Download Now</a>
@@ -38,7 +34,7 @@ include "./admin/login.php";
                     <div class="dropdown-menu bg-light border-0 m-0">
                         <a href="appointment.php" class="dropdown-item">Tin Tức</a>
                         <a href="team.php" class="dropdown-item">Bác Sĩ</a>
-                        <a href="testimonial.php" class="dropdown-item">Bảng Giá</a>
+                        <a href="price.php" class="dropdown-item">Bảng Giá</a>
                         <a href="404.php" class="dropdown-item">Quản lý chất lượng</a>
                     </div>
                 </div>
@@ -416,14 +412,14 @@ include "./admin/login.php";
                                 </div>
                                 <div class="col-12 col-sm-6">
                                     <div class="date" id="date1" data-target-input="nearest">
-                                        <input type="text" class="form-control bg-white border-0 datetimepicker-input" placeholder="Từ Ngày"
+                                        <input type="text" class="form-control bg-white border-0 datetimepicker-input" placeholder="Ngày Hẹn"
                                             data-target="#date1" data-toggle="datetimepicker" style="height: 55px;">
                                     </div>
                                 </div>
                                 <div class="col-12 col-sm-6">
                                     <div class="time" id="time1" data-target-input="nearest">
                                         <input type="text" class="form-control bg-white border-0 datetimepicker-input"
-                                            placeholder="Đến Ngày" data-target="#time1" data-toggle="datetimepicker" style="height: 55px;">
+                                            placeholder="Vào lúc" data-target="#time1" data-toggle="datetimepicker" style="height: 55px;">
                                     </div>
                                 </div>
                                 <div class="col-12">
@@ -495,22 +491,36 @@ include "./admin/login.php";
             <div class="row g-5">
                 <div class="col-lg-3 d-none d-lg-block wow fadeIn" data-wow-delay="0.5s">
                     <div class="testimonial-left h-100">
-                        <img class="img-fluid" src="img/testimonial-1.jpg" alt="">
-                        <img class="img-fluid" src="img/testimonial-2.jpg" alt="">
-                        <img class="img-fluid" src="img/testimonial-3.jpg" alt="">
+                        <?php
+                            $sql= "select * from khachhang";
+                            $result = mysqli_query($conn,$sql);
+                            while($row = mysqli_fetch_assoc($result)){
+                        ?>
+                        <img class="img-fluid" src="img/<?php echo $row['img_kh'];?>" alt="">
+                        <?php
+                            }
+                        ?>
                     </div>
                 </div>
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
                     <div class="owl-carousel testimonial-carousel">
+                        <?php
+                            $sql = "select * from khachhang";
+                            $result = mysqli_query($conn,$sql);
+                            while($row = mysqli_fetch_assoc($result)){
+
+                           ?>
                         <div class="testimonial-item text-center">
-                            <img class="img-fluid rounded mx-auto mb-4" src="img/testimonial-1.jpg" alt="">
-                            <p class="fs-5">“Sau điều trị, thị lực của tôi cải thiện rõ rệt. Cảm ơn đội ngũ bác sĩ
-                                rất tận tâm.”
+                            <img class="img-fluid rounded mx-auto mb-4" src="img/<?php echo $row['img_kh'];?>" alt="">
+                            <p class="fs-5"><?php echo $row['noidung'];?>
                             </p>
-                            <h4>Nguyễn Văn A</h4>
-                            <span>Bệnh Nhân</span>
+                            <h4><?php echo $row['Tenkhachhang'];?></h4>
+                            <span><?php echo $row['nghenghiep'];?></span>
                         </div>
-                        <div class="testimonial-item text-center">
+                        <?php 
+                             }
+                        ?>
+                        <!-- <div class="testimonial-item text-center">
                             <img class="img-fluid rounded mx-auto mb-4" src="img/testimonial-2.jpg" alt="">
                             <p class="fs-5">“Tôi thật sự yên tâm khi khám và điều trị tại Bệnh Viện Mắt Hoa Lư.”
                             </p>
@@ -524,14 +534,20 @@ include "./admin/login.php";
                             </p>
                             <h4>Tống Thị C</h4>
                             <span>Bệnh Nhân</span>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
                 <div class="col-lg-3 d-none d-lg-block wow fadeIn" data-wow-delay="0.5s">
                     <div class="testimonial-right h-100">
-                        <img class="img-fluid" src="img/testimonial-1.jpg" alt="">
-                        <img class="img-fluid" src="img/testimonial-2.jpg" alt="">
-                        <img class="img-fluid" src="img/testimonial-3.jpg" alt="">
+                        <?php
+                            $sql= "select * from khachhang";
+                            $result = mysqli_query($conn,$sql);
+                            while($row = mysqli_fetch_assoc($result)){
+                        ?>
+                        <img class="img-fluid" src="img/<?php echo $row['img_kh'];?>" alt="">
+                        <?php
+                            }
+                        ?>
                     </div>
                 </div>
             </div>

@@ -15,8 +15,8 @@
 
    <!-- Navbar Start -->
     <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top py-4 px-4 px-lg-5">
-        <a href="index.php" class="navbar-brand d-block d-lg-none">
-            <h1 class="m-0 text-uppercase text-primary"><i class="fa fa-hospital fs-1 me-3"></i>Plasery</h1>
+       <a href="index.php" class="navbar-brand d-block d-lg-none">
+            <h1 class="m-0 text-uppercase text-primary"><i class="fa fa-hospital fs-1 me-3"></i>BV Mắt Hoa Lư</h1>
         </a>
         <!-- <div class="d-none d-lg-flex w-25">
             <a href="https://themewagon.com/themes/plasery" class="btn btn-light px-3">Download Now</a>
@@ -32,7 +32,7 @@
                 <div class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Thông Tin</a>
                     <div class="dropdown-menu bg-light border-0 m-0">
-                        <a href="appointment.php" class="dropdown-item">Tin Tức</a>
+                        <a href="appointment.php" class="dropdown-item">Đặt Lịch Hẹn</a>
                         <a href="team.php" class="dropdown-item">Bác Sĩ</a>
                         <a href="testimonial.php" class="dropdown-item">Bảng Giá</a>
                         <a href="404.php" class="dropdown-item">Quản lý chất lượng</a>

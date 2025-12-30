@@ -15,8 +15,8 @@
 
     <!-- Navbar Start -->
     <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top py-4 px-4 px-lg-5">
-        <a href="index.php" class="navbar-brand d-block d-lg-none">
-            <h1 class="m-0 text-uppercase text-primary"><i class="fa fa-hospital fs-1 me-3"></i>Plasery</h1>
+       <a href="index.php" class="navbar-brand d-block d-lg-none">
+            <h1 class="m-0 text-uppercase text-primary"><i class="fa fa-hospital fs-1 me-3"></i>BV Mắt Hoa Lư</h1>
         </a>
         <div class="d-none d-lg-flex w-25">
             <a href="https://themewagon.com/themes/plasery" class="btn btn-light px-3">Download Now</a>
@@ -26,23 +26,24 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav mx-auto bg-light py-3 py-lg-0 px-3">
-                <a href="index.php" class="nav-item nav-link">Home</a>
-                <a href="about.php" class="nav-item nav-link">About Us</a>
-                <a href="service.php" class="nav-item nav-link">Our Services</a>
+                <a href="index.php" class="nav-item nav-link ">Trang Chủ</a>
+                <a href="about.php" class="nav-item nav-link">Giới Thiệu</a>
+                <a href="service.php" class="nav-item nav-link">Dịch Vụ</a>
                 <div class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown">Pages</a>
+                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Thông Tin</a>
                     <div class="dropdown-menu bg-light border-0 m-0">
-                        <a href="appointment.php" class="dropdown-item">Appointment</a>
-                        <a href="team.php" class="dropdown-item active">Team Members</a>
-                        <a href="testimonial.php" class="dropdown-item">Testimonial</a>
-                        <a href="404.php" class="dropdown-item">404 Page</a>
+                        <a href="appointment.php" class="dropdown-item">Đặt Lịch Hẹn</a>
+                        <a href="team.php" class="dropdown-item active">Bác Sĩ</a>
+                        <a href="testimonial.php" class="dropdown-item">Bảng Giá</a>
+                        <a href="404.php" class="dropdown-item">Quản lý chất lượng</a>
                     </div>
                 </div>
-                <a href="contact.php" class="nav-item nav-link">Contact Us</a>
+                <a href="service.php" class="nav-item nav-link">Tin Tức</a>
+                <a href="contact.php" class="nav-item nav-link">Liên Hệ</a>
             </div>
         </div>
         <div class="d-none d-lg-block w-25 text-end">
-            <a href="#" class="btn btn-light px-3">Make Appointment</a>
+            <a href="#" class="btn btn-light px-3">Đặt Lịch Hẹn</a>
         </div>
     </nav>
     <!-- Navbar End -->
@@ -51,12 +52,11 @@
     <!-- Page Header Start -->
     <div class="container-fluid page-header py-5 mb-5 wow fadeIn" data-wow-delay="0.1s">
         <div class="container py-5">
-            <h1 class="display-3 mb-3">Our Team</h1>
+            <h1 class="display-3 mb-3">Đội Ngũ Bác Sĩ</h1>
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb d-inline-flex justify-content-start bg-white px-4 py-2 mb-0">
-                    <li class="breadcrumb-item"><a href="#">Home</a></li>
-                    <li class="breadcrumb-item"><a href="#">Pages</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">Our Team</li>
+                    <li class="breadcrumb-item"><a href="#">Trang chủ</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Đội Ngũ Bác Sĩ</li>
                 </ol>
             </nav>
         </div>
@@ -64,113 +64,47 @@
     <!-- Page Header End -->
 
 
-    <!-- Team Start -->
+   <!-- Team Start -->
     <div class="container-fluid team py-5">
-        <div class="container">
+        <div class="container pt-5">
             <div class="text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;">
-                <h1 class="display-5 mb-5">Meet Our Surgical Specialists</h1>
+                <h1 class="display-5 mb-5">Đội ngũ Bác Sĩ của Chúng Tôi</h1>
             </div>
             <div class="row g-4">
-                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="team-item bg-light">
-                        <div class="overflow-hidden">
-                            <img class="img-fluid" src="img/team-1.jpg" alt="">
-                        </div>
-                        <div class="team-text text-center px-4">
-                            <h4>Dr. Boris Johnson</h4>
-                            <span>Plastic Surgeon</span>
-                        </div>
-                        <div class="team-text-overflow text-center bg-light p-4">
-                            <h4>Dr. Boris Johnson</h4>
-                            <p>Plastic Surgeon</p>
-                            <div class="d-flex justify-content-center">
-                                <a class="btn btn-square btn-outline-primary border-2 m-1" href="#!"><i
-                                        class="fab fa-x-twitter"></i></a>
-                                <a class="btn btn-square btn-outline-primary border-2 m-1" href="#!"><i
-                                        class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-square btn-outline-primary border-2 m-1" href="#!"><i
-                                        class="fab fa-youtube"></i></a>
-                                <a class="btn btn-square btn-outline-primary border-2 m-1" href="#!"><i
-                                        class="fab fa-linkedin-in"></i></a>
+                <?php
+                $sql = "select * from nhanvien";
+                $result = mysqli_query($conn, $sql);
+                while ($row = mysqli_fetch_assoc($result)) {
+                ?>
+
+                    <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                        <div class="team-item bg-light">
+                            <div class="overflow-hidden">
+                                <img class="img-fluid" src="img/bskien.png" alt="">
+                            </div>
+                            <div class="team-text text-center px-4">
+                                <h4>BS. <?php echo $row['tennhanvien']; ?></h4>
+                                <span><?php echo $row['chucvu']; ?></span>
+                            </div>
+                            <div class="team-text-overflow text-center bg-light p-4">
+                                <h4>BS. <?php echo $row['tennhanvien']; ?></h4>
+                                <p><?php echo $row['chucvu']; ?></p>
+                                <div class="d-flex justify-content-center">
+                                    <a class="btn btn-square btn-outline-primary border-2 m-1" href="#!"><i
+                                            class="fab fa-x-twitter"></i></a>
+                                    <a class="btn btn-square btn-outline-primary border-2 m-1" href="#!"><i
+                                            class="fab fa-facebook-f"></i></a>
+                                    <a class="btn btn-square btn-outline-primary border-2 m-1" href="#!"><i
+                                            class="fab fa-youtube"></i></a>
+                                    <a class="btn btn-square btn-outline-primary border-2 m-1" href="#!"><i
+                                            class="fab fa-linkedin-in"></i></a>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="team-item bg-light">
-                        <div class="overflow-hidden">
-                            <img class="img-fluid" src="img/team-2.jpg" alt="">
-                        </div>
-                        <div class="team-text text-center px-4">
-                            <h4>Dr. Amelia Jones</h4>
-                            <span>Plastic Surgeon</span>
-                        </div>
-                        <div class="team-text-overflow text-center bg-light p-4">
-                            <h4>Dr. Amelia Jones</h4>
-                            <p>Plastic Surgeon</p>
-                            <div class="d-flex justify-content-center">
-                                <a class="btn btn-square btn-outline-primary border-2 m-1" href="#!"><i
-                                        class="fab fa-x-twitter"></i></a>
-                                <a class="btn btn-square btn-outline-primary border-2 m-1" href="#!"><i
-                                        class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-square btn-outline-primary border-2 m-1" href="#!"><i
-                                        class="fab fa-youtube"></i></a>
-                                <a class="btn btn-square btn-outline-primary border-2 m-1" href="#!"><i
-                                        class="fab fa-linkedin-in"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                    <div class="team-item bg-light">
-                        <div class="overflow-hidden">
-                            <img class="img-fluid" src="img/team-3.jpg" alt="">
-                        </div>
-                        <div class="team-text text-center px-4">
-                            <h4>Dr. Ava Brown</h4>
-                            <span>Plastic Surgeon</span>
-                        </div>
-                        <div class="team-text-overflow text-center bg-light p-4">
-                            <h4>Dr. Ava Brown</h4>
-                            <p>Plastic Surgeon</p>
-                            <div class="d-flex justify-content-center">
-                                <a class="btn btn-square btn-outline-primary border-2 m-1" href="#!"><i
-                                        class="fab fa-x-twitter"></i></a>
-                                <a class="btn btn-square btn-outline-primary border-2 m-1" href="#!"><i
-                                        class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-square btn-outline-primary border-2 m-1" href="#!"><i
-                                        class="fab fa-youtube"></i></a>
-                                <a class="btn btn-square btn-outline-primary border-2 m-1" href="#!"><i
-                                        class="fab fa-linkedin-in"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
-                    <div class="team-item bg-light">
-                        <div class="overflow-hidden">
-                            <img class="img-fluid" src="img/team-4.jpg" alt="">
-                        </div>
-                        <div class="team-text text-center px-4">
-                            <h4>Dr. Alexander Bell</h4>
-                            <span>Plastic Surgeon</span>
-                        </div>
-                        <div class="team-text-overflow text-center bg-light p-4">
-                            <h4>Dr. Alexander Bell</h4>
-                            <p>Plastic Surgeon</p>
-                            <div class="d-flex justify-content-center">
-                                <a class="btn btn-square btn-outline-primary border-2 m-1" href="#!"><i
-                                        class="fab fa-x-twitter"></i></a>
-                                <a class="btn btn-square btn-outline-primary border-2 m-1" href="#!"><i
-                                        class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-square btn-outline-primary border-2 m-1" href="#!"><i
-                                        class="fab fa-youtube"></i></a>
-                                <a class="btn btn-square btn-outline-primary border-2 m-1" href="#!"><i
-                                        class="fab fa-linkedin-in"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <?php
+                }
+                ?>
             </div>
         </div>
     </div>
