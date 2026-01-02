@@ -1,6 +1,6 @@
 <?php
 require "./header.php";
-include "./admin/login.php";
+require "./admin/login.php";
 ?>
 
 <body>
@@ -451,7 +451,7 @@ include "./admin/login.php";
                     <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
                         <div class="team-item bg-light">
                             <div class="overflow-hidden">
-                                <img class="img-fluid" src="img/bskien.png" alt="">
+                                <img class="img-fluid" src="img/bs/<?php echo $row['img_nv']?>" alt="">
                             </div>
                             <div class="team-text text-center px-4">
                                 <h4>BS. <?php echo $row['tennhanvien']; ?></h4>

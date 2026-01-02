@@ -29,7 +29,7 @@ include "./admin/login.php";
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
-            <div class="navbar-nav mx-auto bg-light py-3 py-lg-0 px-3">
+           <div class="navbar-nav mx-auto py-3 py-lg-0 px-3" style="background-color: #f2f5fb !important;">
                 <a href="index.php" class="nav-item nav-link">Trang chủ</a>
                 <a href="about.php" class="nav-item nav-link active">Giới thiệu</a>
                 <a href="service.php" class="nav-item nav-link">Dịch Vụ</a>
@@ -130,7 +130,7 @@ include "./admin/login.php";
     <!-- About End -->
 
 
-  <!-- Team Start -->
+   <!-- Team Start -->
     <div class="container-fluid team py-5">
         <div class="container pt-5">
             <div class="text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;">
@@ -146,7 +146,7 @@ include "./admin/login.php";
                     <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
                         <div class="team-item bg-light">
                             <div class="overflow-hidden">
-                                <img class="img-fluid" src="img/bskien.png" alt="">
+                                <img class="img-fluid" src="img/bs/<?php echo $row['img_nv']?>" alt="">
                             </div>
                             <div class="team-text text-center px-4">
                                 <h4>BS. <?php echo $row['tennhanvien']; ?></h4>
@@ -182,7 +182,7 @@ include "./admin/login.php";
         <div class="container">
             <div class="row g-4">
                 <div class="col-md-12 col-lg-3 wow fadeInUp" data-wow-delay="0.1s">
-                    <h1 class="display-5 mb-4 mb-lg-0">Important Facts</h1>
+                    <h1 class="display-5 mb-4 mb-lg-0">Thông tin quan trọng</h1>
                 </div>
                 <div class="col-md-4 col-lg-3 wow fadeInUp" data-wow-delay="0.3s">
                     <div class="bg-light h-100 p-4">
@@ -191,9 +191,9 @@ include "./admin/login.php";
                                 <i class="fa fa-calendar-alt text-white"></i>
                             </div>
                             <i class="fa fa-arrow-right text-primary ms-n1 me-2"></i>
-                            <h1 class="display-4 mb-0" data-toggle="counter-up">25</h1>
+                            <h1 class="display-4 mb-0" data-toggle="counter-up">5</h1>
                         </div>
-                        <span class="fs-5">Years Experience</span>
+                        <span class="fs-5">năm kinh nghiệm</span>
                     </div>
                 </div>
                 <div class="col-md-4 col-lg-3 wow fadeInUp" data-wow-delay="0.5s">
@@ -203,9 +203,9 @@ include "./admin/login.php";
                                 <i class="fa fa-user text-white"></i>
                             </div>
                             <i class="fa fa-arrow-right text-primary ms-n1 me-2"></i>
-                            <h1 class="display-4 mb-0" data-toggle="counter-up">35</h1>
+                            <h1 class="display-4 mb-0" data-toggle="counter-up">6</h1>
                         </div>
-                        <span class="fs-5">Surgical Specialists</span>
+                        <span class="fs-5">Bác sĩ phẫu thuật</span>
                     </div>
                 </div>
                 <div class="col-md-4 col-lg-3 wow fadeInUp" data-wow-delay="0.7s">
@@ -215,15 +215,16 @@ include "./admin/login.php";
                                 <i class="fa fa-users text-white"></i>
                             </div>
                             <i class="fa fa-arrow-right text-primary ms-n1 me-2"></i>
-                            <h1 class="display-4 mb-0" data-toggle="counter-up">9876</h1>
+                            <h1 class="display-4 mb-0" data-toggle="counter-up">10000</h1>
                         </div>
-                        <span class="fs-5">Improved Smiles</span>
+                        <span class="fs-5">Phản hồi tích cực</span>
                     </div>
                 </div>
             </div>
         </div>
     </div>
     <!-- Facts End -->
+
 
 
     <!-- Instagram Start -->
